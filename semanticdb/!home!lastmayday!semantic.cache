@@ -1,0 +1,23 @@
+;; Object lastmayday/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "lastmayday/"
+  :tables (list 
+   (semanticdb-table "test.py"
+    :major-mode 'python-mode
+    :tags 
+        '( ("data" variable nil nil [1 268])
+            ("string" variable nil nil [272 444])
+            ("res" variable nil nil [446 454])
+            ("for" code nil nil [455 568])
+            ("print" code nil nil [568 586]))          
+    :file "test.py"
+    :pointmax 587
+    :fsize 586
+    :lastmodtime '(21476 37289 266503 388000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!lastmayday!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

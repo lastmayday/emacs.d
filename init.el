@@ -53,7 +53,7 @@
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
 (require 'init-windows)
-(require 'init-sessions)
+;;(require 'init-sessions)
 (require 'init-fonts)
 (require 'init-mmm)
 
@@ -77,9 +77,8 @@
 (require 'init-css)
 (require 'init-haml)
 (require 'init-python-mode)
-(require 'init-haskell)
 (require 'init-ruby-mode)
-(require 'init-rails)
+(require 'init-haskell)
 (require 'init-sql)
 
 (require 'init-paredit)
