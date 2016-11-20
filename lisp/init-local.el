@@ -33,8 +33,11 @@
 (setq gnus-inhibit-startup-message t)
 (global-linum-mode t)
 
-(require-package 'ecb)
-(require 'ecb-autoloads)
+(require 'cedet)
+(global-ede-mode 1)                      ; Enable the Project management system
+
+(require 'ecb)
+;(require 'ecb-autoloads)
 (setq ecb-auto-activate 1)
 (setq stack-trace-on-error t)
 (setq ecb-auto-activate t ecb-tip-of-the-day nil)
@@ -46,12 +49,28 @@
 '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1)))
 (ecb-activate)
 
-
 (require-package 'undo-tree)
-
 
 (require-package 'jedi)
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
+
+(defun pbcopy ()
+    (interactive)
+      (call-process-region (point) (mark) "pbcopy")
+        (setq deactivate-mark t))
+
+(defun pbpaste ()
+    (interactive)
+      (call-process-region (point) (if mark-active (mark) (point)) "pbpaste" t t))
+
+(defun pbcut ()
+    (interactive)
+      (pbcopy)
+        (delete-region (region-beginning) (region-end)))
+
+(global-set-key (kbd "C-c c") 'pbcopy)
+(global-set-key (kbd "C-c v") 'pbpaste)
+(global-set-key (kbd "C-c x") 'pbcut)')
 
 (provide 'init-local)
